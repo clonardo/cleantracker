@@ -43,6 +43,26 @@ namespace CleanTracker.Lib.Writer
             WriterUtils.CreateIfMissing(rejectedPath);
         }
 
+        
+        public static void WriteCsvFile(string filename, IEnumerable<MediaNameAndId> rows)
+        {
+
+            try
+            {
+                TextWriter textWriter = File.CreateText(filename);
+
+                var csvWriter = new CsvHelper.CsvWriter(textWriter);
+                csvWriter.WriteRecords(rows);
+
+                textWriter.Close();
+                Console.WriteLine("Wrote file to " + filename);
+            }
+            catch
+            {
+                Console.WriteLine("Error writing to " + filename);
+            }
+        }
+
         public static void WriteCsvFile(string filename, IEnumerable<Row> rows)
         {
             

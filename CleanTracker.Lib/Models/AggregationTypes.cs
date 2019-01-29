@@ -41,9 +41,23 @@ namespace CleanTracker.Lib.Models
     }
 
     /// <summary>
-    /// Flattened data output
+    /// Get only the media ID and name from a row of data
     /// </summary>
-    public class AveragesWithClickData
+    public class MediaNameAndId
+    {
+        public string mediaName { get; set; }
+        public int mediaId { get; set; }
+        public MediaNameAndId(Row row)
+        {
+            mediaName = row.MEDIA_NAME;
+            mediaId = row.MEDIA_ID;
+        }
+    }
+
+        /// <summary>
+        /// Flattened data output
+        /// </summary>
+        public class AveragesWithClickData
     {
         public double avgLPD { get; set; }
         public double avgRPD { get; set; }

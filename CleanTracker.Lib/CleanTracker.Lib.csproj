@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\IRow.cs" />
+    <Compile Include="Extensions\RowExtensions.cs" />
     <Compile Include="Models\AggregationTypes.cs" />
     <Compile Include="Models\Row.cs" />
     <Compile Include="Processing\ProcessLpdRpd.cs" />

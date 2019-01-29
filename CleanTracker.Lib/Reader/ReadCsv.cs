@@ -130,6 +130,7 @@ namespace CleanTracker.Lib.Reader
                         {
                             row.time = time;
                             row.timetick = timetick;
+                                 
                             allRows.Add(row);
                         }
                         else

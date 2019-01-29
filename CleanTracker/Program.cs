@@ -41,7 +41,18 @@ namespace CleanTracker
                 Console.WriteLine("Found "+targetFiles.Count.ToString()+" target files");
                 CreateDirectories(outputBasePath, timestamp, cleanDirName, rejectedDirName);
 
-                ReadAndProcessFiles(targetFiles, Path.Combine(outputBasePath, timestamp), "aggregated.csv");
+                // get all targeted stimuli
+                // ReadAndProcessFiles(targetFiles, Path.Combine(outputBasePath, timestamp), "aggregated.csv");
+
+                // get all with images
+                //ReadFilesAndAggregateImageData(targetFiles, Path.Combine(outputBasePath, timestamp), "aggregated-images.csv");
+
+                // solve illiteracy by finding media ID mismatches
+                ReadFilesAndAggregateMismatchedMediaIdData(targetFiles, Path.Combine(outputBasePath, timestamp), "mismatched-media-ids.csv");
+
+                // get media IDs with dupe media names. doesn't work 100%, more pivoting needed
+                // ReadFilesAndGetMediaIdsWIthDuplicateMediaNames(targetFiles, Path.Combine(outputBasePath, timestamp), "dupe-media-names.csv");
+
                 //Read("C:\\gazepoint_data\\ESCR0033_all_gaze.csv");
                 /*
                 foreach (var tgt in targetFiles)
